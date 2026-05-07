@@ -92,27 +92,24 @@
             margin-bottom: 40px;
         }
 
-        /* Container de Botões Ajustado */
-        .botoes-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .btn-secundario {
             background: var(--azul-rios);
             color: #ffffff;
-            padding: 15px 30px;
+            padding: 20px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: 0.3s;
             display: inline-block;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
+        }
+
+        .btn-secundario:hover {
+            background: #112a52;
+            transform: scale(1.05);
         }
 
         .btn-historia {
@@ -128,9 +125,10 @@
             text-transform: uppercase;
             border: none;
             cursor: pointer;
+            margin-top: 50px; /* Dá um espaço para separar do botão de assinar */
         }
 
-        .btn-secundario:hover, .btn-historia:hover {
+        .btn-historia:hover {
             transform: scale(1.05);
             opacity: 0.9;
         }
@@ -272,7 +270,6 @@
         
         <div class="botoes-container">
             <button onclick="abrirModal('modalLocais')" class="btn-secundario">Locais que Atendemos</button>
-            <button onclick="abrirModal('modalHistoria')" class="btn-historia">Como surgiu a RiosNet? Clique aqui e saiba</button>
         </div>
     </section>
 
@@ -280,6 +277,9 @@
         <h2>Pronto para navegar sem limites?</h2>
         <p>Fale agora mesmo com o nosso suporte técnico e comercial.</p>
         <a href="https://wa.me/5591993802718" target="_blank" class="btn-cta">ASSINE JÁ</a>
+        
+        <br>
+        <button onclick="abrirModal('modalHistoria')" class="btn-historia">Como surgiu a RiosNet? Clique aqui e saiba</button>
     </section>
 
     <footer>
