@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provedor de Internet | Alta Velocidade</title>
+    <title>RiosNet | Provedor de Internet</title>
     <style>
-        /* Estilização Geral */
+        /* Paleta de Cores extraída da Logomarca */
+        :root {
+            --azul-rios: #1b427b;
+            --laranja-rios: #f18321;
+            --verde-rios: #009e4d;
+            --fundo-claro: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +21,8 @@
         }
 
         body {
-            background-color: #0a0b10;
-            color: #ffffff;
+            background-color: var(--fundo-claro);
+            color: #333;
             line-height: 1.6;
         }
 
@@ -24,188 +31,162 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
-            background: rgba(10, 11, 16, 0.95);
+            padding: 10px 10%;
+            background: #ffffff;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #1f2235;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00d4ff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Aqui controlamos o tamanho da logo */
+        .logo img {
+            height: 70px; /* Ajuste este valor se quiser a logo maior ou menor */
         }
 
         nav a {
-            color: white;
+            color: var(--azul-rios);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
+            margin-left: 30px;
+            font-weight: 700;
+            font-size: 1rem;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #00d4ff;
+            color: var(--laranja-rios);
         }
 
-        /* Seção Hero (Destaque) */
+        /* Seção Principal (Hero) */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1f3c 0%, #0a0b10 100%);
+            background: linear-gradient(135deg, #f8fcfd 0%, #e2edf8 100%);
             padding: 0 20px;
+            margin-top: 60px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
+            color: var(--azul-rios);
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: var(--laranja-rios);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            max-width: 600px;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 700px;
+            margin-bottom: 40px;
         }
 
+        /* Botões */
         .btn-cta {
-            background: #00d4ff;
-            color: #0a0b10;
-            padding: 15px 40px;
+            background: var(--laranja-rios);
+            color: #ffffff;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(241, 131, 33, 0.4);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
         .btn-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            background: var(--verde-rios);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 158, 77, 0.4);
         }
 
-        /* Cards de Planos */
-        .plans {
+        /* Seção Assine Já */
+        .subscribe-section {
             padding: 100px 10%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .plan-card {
-            background: #161b33;
-            padding: 40px;
-            border-radius: 20px;
             text-align: center;
-            border: 1px solid #1f2235;
-            transition: 0.3s;
+            background: #ffffff;
         }
 
-        .plan-card:hover {
-            border-color: #00d4ff;
-            transform: translateY(-10px);
+        .subscribe-section h2 {
+            color: var(--azul-rios);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
 
-        .plan-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .subscribe-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
         }
 
-        .price {
-            font-size: 2.5rem;
+        /* Rodapé */
+        footer {
+            background: var(--azul-rios);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .owners {
+            background: #ffffff;
+            color: var(--verde-rios);
             font-weight: bold;
-            color: #00d4ff;
-            margin: 20px 0;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .price span {
-            font-size: 1rem;
-            color: #a0a0a0;
-        }
-
-        ul {
-            list-style: none;
-            margin-bottom: 30px;
-            color: #a0a0a0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Responsividade */
+        /* Responsividade para Celulares */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            header { padding: 20px 5%; }
-            nav { display: none; } /* Simplificação para mobile */
+            header { padding: 15px 5%; }
+            nav { display: none; }
+            .hero { height: 90vh; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Internet Pro</div>
+        <div class="logo">
+            <img src="logo.jpg" alt="RiosNet Provedor de Internet">
+        </div>
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#planos">Planos</a>
-            <a href="#cobertura">Cobertura</a>
-            <a href="#contato">Suporte</a>
+            <a href="#assinar">Assine Já</a>
         </nav>
     </header>
 
     <section class="hero" id="inicio">
-        <h1>Conexão Ultra Veloz</h1>
-        <p>Experimente a liberdade da fibra óptica de última geração. Estabilidade para trabalhar, jogar e conectar sua família.</p>
-        <a href="https://wa.me/seunumeroaqui" class="btn-cta">Assine Agora</a>
+        <h1>Conexão de Verdade com a <span>RiosNet</span></h1>
+        <p>Internet de alta disponibilidade e estabilidade. A melhor fibra óptica agora com cobertura total para você na Vila Apeí e região.</p>
+        <a href="#assinar" class="btn-cta">Quero Conhecer</a>
     </section>
 
-    <section class="plans" id="planos">
-        <div class="plan-card">
-            <h3>Básico</h3>
-            <div class="price">200<span>MB</span></div>
-            <ul>
-                <li>Fibra Óptica</li>
-                <li>Wi-Fi Grátis</li>
-                <li>Suporte 24h</li>
-            </ul>
-            <a href="#" class="btn-cta" style="padding: 10px 20px;">Escolher</a>
-        </div>
-
-        <div class="plan-card" style="border-color: #00d4ff;">
-            <h3>Gamer</h3>
-            <div class="price">500<span>MB</span></div>
-            <ul>
-                <li>Baixa Latência</li>
-                <li>Upload Turbinado</li>
-                <li>IP Fixo Opcional</li>
-            </ul>
-            <a href="#" class="btn-cta" style="padding: 10px 20px;">Escolher</a>
-        </div>
-
-        <div class="plan-card">
-            <h3>Premium</h3>
-            <div class="price">1<span>GB</span></div>
-            <ul>
-                <li>Ultra Velocidade</li>
-                <li>Instalação Grátis</li>
-                <li>Roteador Gigabit</li>
-            </ul>
-            <a href="#" class="btn-cta" style="padding: 10px 20px;">Escolher</a>
-        </div>
+    <section class="subscribe-section" id="assinar">
+        <h2>Pronto para ter a melhor internet?</h2>
+        <p>Fale direto com a nossa equipe no WhatsApp, consulte a viabilidade e agende sua instalação.</p>
+        <a href="https://wa.me/seunumeroaqui" class="btn-cta">ASSINE JÁ</a>
     </section>
+
+    <footer>
+        <p>&copy; 2026 RiosNet - Provedor de Internet. Todos os direitos reservados.</p>
+        <div class="owners">Direção: Renan Santos e Thiago Morais</div>
+    </footer>
 
 </body>
 </html>
