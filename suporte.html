@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte Rápido | RiosNet</title>
+    <style>
+        :root {
+            --azul-rios: #1b427b;
+            --laranja-rios: #f18321;
+            --verde-rios: #009e4d;
+            --fundo-claro: #f4f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--fundo-claro);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10%;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            color: var(--azul-rios);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .botoes-suporte {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .btn-opcao {
+            background: #ffffff;
+            color: var(--azul-rios);
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            border: 2px solid var(--azul-rios);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-opcao:hover {
+            background: var(--azul-rios);
+            color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(27, 66, 123, 0.3);
+        }
+
+        /* Cores Específicas para Destaque */
+        .btn-lenta:hover { background: var(--laranja-rios); border-color: var(--laranja-rios); }
+        .btn-instalacao:hover { background: var(--verde-rios); border-color: var(--verde-rios); }
+
+        footer {
+            background: var(--azul-rios);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.jpg" alt="RiosNet Provedor de Internet"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Central de Suporte Rápido</h1>
+        <p>Escolha a opção abaixo para falar conosco no WhatsApp:</p>
+
+        <div class="botoes-suporte">
+            <a href="https://wa.me/5591993802718?text=Olá,%20estou%20sem%20sinal.%20Poderia%20me%20ajudar?" target="_blank" class="btn-opcao">
+                Estou sem sinal
+            </a>
+            
+            <a href="https://wa.me/5591993802718?text=Olá,%20minha%20internet%20está%20lenta.%20Poderiam%20verificar?" target="_blank" class="btn-opcao btn-lenta">
+                Minha internet está lenta
+            </a>
+            
+            <a href="https://wa.me/5591993802718?text=Olá,%20gostaria%20de%20solicitar%20uma%20instalação." target="_blank" class="btn-opcao btn-instalacao">
+                Quero uma instalação
+            </a>
+            
+            <a href="https://wa.me/5591993802718?text=Olá,%20gostaria%20de%20efetuar%20um%20pagamento." target="_blank" class="btn-opcao">
+                Quero efetuar o pagamento
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RiosNet | Thiago Moraes e Renan Santos</p>
+    </footer>
+
+</body>
+</html>
