@@ -10,6 +10,7 @@
             --laranja-rios: #f18321;
             --verde-rios: #009e4d;
             --fundo-claro: #ffffff;
+            --vermelho-alerta: #d93838;
         }
 
         * {
@@ -92,24 +93,27 @@
             margin-bottom: 40px;
         }
 
+        .botoes-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
         .btn-secundario {
             background: var(--azul-rios);
             color: #ffffff;
-            padding: 20px 40px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: 0.3s;
             display: inline-block;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
-        }
-
-        .btn-secundario:hover {
-            background: #112a52;
-            transform: scale(1.05);
         }
 
         .btn-historia {
@@ -125,10 +129,28 @@
             text-transform: uppercase;
             border: none;
             cursor: pointer;
-            margin-top: 50px; /* Dá um espaço para separar do botão de assinar */
         }
 
-        .btn-historia:hover {
+        .btn-suporte {
+            background: var(--vermelho-alerta);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(217, 56, 56, 0.4);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+
+        .btn-secundario:hover, .btn-historia:hover, .btn-suporte:hover {
             transform: scale(1.05);
             opacity: 0.9;
         }
@@ -248,7 +270,7 @@
             body { padding-top: 160px; }
             .logo img { height: 80px; }
             .hero h1 { font-size: 2.2rem; }
-            .btn-secundario, .btn-historia { width: 100%; }
+            .btn-secundario, .btn-historia, .btn-suporte { width: 100%; }
         }
     </style>
 </head>
@@ -270,16 +292,16 @@
         
         <div class="botoes-container">
             <button onclick="abrirModal('modalLocais')" class="btn-secundario">Locais que Atendemos</button>
+            <button onclick="abrirModal('modalHistoria')" class="btn-historia">Como surgiu a RiosNet? Clique aqui e saiba</button>
         </div>
+        
+        <a href="suporte.html" target="_blank" class="btn-suporte">PRECISA DE SUPORTE RÁPIDO ⏩? CLICK AQUI!</a>
     </section>
 
     <section class="subscribe-section" id="assinar">
         <h2>Pronto para navegar sem limites?</h2>
         <p>Fale agora mesmo com o nosso suporte técnico e comercial.</p>
         <a href="https://wa.me/5591993802718" target="_blank" class="btn-cta">ASSINE JÁ</a>
-        
-        <br>
-        <button onclick="abrirModal('modalHistoria')" class="btn-historia">Como surgiu a RiosNet? Clique aqui e saiba</button>
     </section>
 
     <footer>
@@ -304,33 +326,16 @@
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modalHistoria')">&times;</span>
             <h3>Nossa História</h3>
-            <p>
-                A <strong>RiosNet</strong> surgiu logo após dois funcionários, que trabalhavam para outra empresa, decidirem seguir seu próprio caminho em busca de um ambiente mais respeitoso e profissional.
-            </p>
-            <p>
-                Unidos pelo desejo de oferecer um serviço de excelência, fundaram a RiosNet e iniciaram suas atividades na <strong>Vila Cruz</strong>. Desde então, a empresa vem em constante ascensão, levando conectividade de qualidade para cada vez mais famílias.
-            </p>
-            <p style="text-align: center; font-weight: bold; color: var(--verde-rios);">
-                Nós, da RiosNet, agradecemos aos nossos clientes pela preferência!
-            </p>
+            <p>A <strong>RiosNet</strong> surgiu logo após dois funcionários, que trabalhavam para outra empresa, decidirem seguir seu próprio caminho em busca de um ambiente mais respeitoso e profissional.</p>
+            <p>Unidos pelo desejo de oferecer um serviço de excelência, fundaram a RiosNet e iniciaram suas atividades na <strong>Vila Cruz</strong>. Desde então, a empresa vem em constante ascensão, levando conectividade de qualidade para cada vez mais famílias.</p>
+            <p style="text-align: center; font-weight: bold; color: var(--verde-rios);">Nós, da RiosNet, agradecemos aos nossos clientes pela preferência!</p>
         </div>
     </div>
 
     <script>
-        function abrirModal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-
-        function fecharModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-
-        // Fecha se clicar fora da caixa
-        window.onclick = function(event) {
-            if (event.target.className === "modal") {
-                event.target.style.display = "none";
-            }
-        }
+        function abrirModal(id) { document.getElementById(id).style.display = "flex"; }
+        function fecharModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === "modal") { event.target.style.display = "none"; } }
     </script>
 
 </body>
