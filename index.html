@@ -24,34 +24,44 @@
             background-color: var(--fundo-claro);
             color: #333;
             line-height: 1.6;
+            padding-top: 180px; /* Espaço para o cabeçalho maior não cobrir o conteúdo */
         }
 
-        /* Cabeçalho */
+        /* Cabeçalho Centralizado */
         header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* Coloca a logo em cima e o menu embaixo */
             align-items: center;
-            padding: 10px 10%;
+            justify-content: center;
+            padding: 20px 10%;
             background: #ffffff;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        /* Aqui controlamos o tamanho da logo */
+        /* Logo Centralizada e Maior */
         .logo img {
-            height: 70px; /* Ajuste este valor se quiser a logo maior ou menor */
+            height: 130px; /* Aumentado de 70px para 130px */
+            width: auto;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
             color: var(--azul-rios);
             text-decoration: none;
-            margin-left: 30px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: 0.3s;
+            text-transform: uppercase;
         }
 
         nav a:hover {
@@ -60,7 +70,7 @@
 
         /* Seção Principal (Hero) */
         .hero {
-            height: 80vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -68,7 +78,6 @@
             text-align: center;
             background: linear-gradient(135deg, #f8fcfd 0%, #e2edf8 100%);
             padding: 0 20px;
-            margin-top: 60px;
         }
 
         .hero h1 {
@@ -89,29 +98,28 @@
             margin-bottom: 40px;
         }
 
-        /* Botões */
+        /* Botão Assine Já */
         .btn-cta {
             background: var(--laranja-rios);
             color: #ffffff;
-            padding: 18px 50px;
+            padding: 20px 60px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             transition: 0.3s;
             box-shadow: 0 8px 20px rgba(241, 131, 33, 0.4);
-            border: none;
-            cursor: pointer;
+            display: inline-block;
             text-transform: uppercase;
         }
 
         .btn-cta:hover {
             background: var(--verde-rios);
-            transform: translateY(-5px);
+            transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 158, 77, 0.4);
         }
 
-        /* Seção Assine Já */
+        /* Seção de Fechamento */
         .subscribe-section {
             padding: 100px 10%;
             text-align: center;
@@ -124,18 +132,12 @@
             margin-bottom: 20px;
         }
 
-        .subscribe-section p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
         /* Rodapé */
         footer {
             background: var(--azul-rios);
             color: #ffffff;
             text-align: center;
-            padding: 40px 10%;
+            padding: 50px 10%;
         }
 
         .owners {
@@ -143,19 +145,19 @@
             color: var(--verde-rios);
             font-weight: bold;
             display: inline-block;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 30px;
-            margin-top: 20px;
-            font-size: 1.1rem;
+            margin-top: 25px;
+            font-size: 1.2rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* Responsividade para Celulares */
+        /* Responsividade */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { padding: 15px 5%; }
-            nav { display: none; }
-            .hero { height: 90vh; }
+            body { padding-top: 160px; }
+            .logo img { height: 90px; }
+            .hero h1 { font-size: 2.2rem; }
+            .btn-cta { font-size: 1.2rem; padding: 15px 40px; }
         }
     </style>
 </head>
@@ -173,19 +175,19 @@
 
     <section class="hero" id="inicio">
         <h1>Conexão de Verdade com a <span>RiosNet</span></h1>
-        <p>Internet de alta disponibilidade e estabilidade. A melhor fibra óptica agora com cobertura total para você na Vila Apeí e região.</p>
-        <a href="#assinar" class="btn-cta">Quero Conhecer</a>
+        <p>A melhor fibra óptica com alta disponibilidade para a Vila Apeí e região. Estabilidade que você sente, velocidade que você vê.</p>
+        <a href="https://wa.me/5591993802718" target="_blank" class="btn-cta">ASSINE JÁ</a>
     </section>
 
     <section class="subscribe-section" id="assinar">
-        <h2>Pronto para ter a melhor internet?</h2>
-        <p>Fale direto com a nossa equipe no WhatsApp, consulte a viabilidade e agende sua instalação.</p>
+        <h2>Pronto para navegar sem limites?</h2>
+        <p>Clique no botão abaixo e fale agora mesmo com o nosso suporte técnico e comercial.</p>
         <a href="https://wa.me/5591993802718" target="_blank" class="btn-cta">ASSINE JÁ</a>
     </section>
 
     <footer>
         <p>&copy; 2026 RiosNet - Provedor de Internet. Todos os direitos reservados.</p>
-        <div class="owners">Direção: Renan Santos e Thiago Morais</div>
+        <div class="owners">Donos da empresa: Renan Santos e Thiago Morais</div>
     </footer>
 
 </body>
