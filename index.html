@@ -62,7 +62,7 @@
 
         /* --- DESTAQUE PRINCIPAL --- */
         .hero {
-            padding: 60px 20px;
+            padding: 60px 20px 20px 20px;
             text-align: center;
             background: linear-gradient(135deg, #f8fcfd 0%, #e2edf8 100%);
         }
@@ -85,63 +85,69 @@
             margin: 0 auto;
         }
 
-        /* --- MENU DE ACESSO RÁPIDO (Botões Organizados) --- */
+        /* --- MENU DE ACESSO RÁPIDO (Botões Empilhados e 3D) --- */
         .acesso-rapido {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 40px 10%;
-            background: #ffffff;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card-btn {
-            padding: 25px 20px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-            text-align: center;
-            cursor: pointer;
-            border: none;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 25px;
+            padding: 20px 20px 60px 20px;
+            background: linear-gradient(135deg, #f8fcfd 0%, #e2edf8 100%);
+        }
+
+        /* Estilo Base 3D Digital */
+        .btn-3d {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            border-radius: 15px;
+            border: none;
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            gap: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            position: relative;
+            letter-spacing: 1px;
         }
 
-        .card-btn span {
-            font-size: 2rem; /* Tamanho do ícone/emoji */
+        .btn-3d span {
+            font-size: 1.8rem;
         }
 
-        /* Cores Específicas dos Cartões */
-        .card-locais {
-            background: var(--azul-rios);
-            color: white;
+        /* Botão Locais (Azul 3D) */
+        .btn-locais-3d {
+            background: linear-gradient(145deg, #225196, #163663);
+            box-shadow: 0 10px 0 #0b1c36, 0 15px 25px rgba(27, 66, 123, 0.4);
         }
-        .card-locais:hover { background: #112a52; transform: translateY(-5px); }
 
-        .card-historia {
-            background: var(--verde-rios);
-            color: white;
+        .btn-locais-3d:active {
+            transform: translateY(10px);
+            box-shadow: 0 0px 0 #0b1c36, 0 5px 10px rgba(27, 66, 123, 0.4);
         }
-        .card-historia:hover { background: #007a3b; transform: translateY(-5px); }
 
-        .card-suporte {
-            background: var(--vermelho-alerta);
-            color: white;
+        /* Botão Suporte (Vermelho 3D) */
+        .btn-suporte-3d {
+            background: linear-gradient(145deg, #eb4040, #c02d2d);
+            box-shadow: 0 10px 0 #851b1b, 0 15px 25px rgba(217, 56, 56, 0.4);
         }
-        .card-suporte:hover { background: #b82a2a; transform: translateY(-5px); }
 
-        /* --- SEÇÃO ASSINATURA E RODAPÉ --- */
+        .btn-suporte-3d:active {
+            transform: translateY(10px);
+            box-shadow: 0 0px 0 #851b1b, 0 5px 10px rgba(217, 56, 56, 0.4);
+        }
+
+        /* --- SEÇÃO ASSINATURA --- */
         .subscribe-section {
             padding: 80px 10%;
             text-align: center;
-            background: #f4f9f9;
+            background: #ffffff;
         }
 
         .subscribe-section h2 {
@@ -170,6 +176,36 @@
             transform: scale(1.05);
         }
 
+        /* --- SEÇÃO HISTÓRIA (FINAL DA PÁGINA) --- */
+        .historia-rodape {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f4f9f9;
+        }
+
+        .btn-historia-simples {
+            background: transparent;
+            color: var(--verde-rios);
+            border: 2px solid var(--verde-rios);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-historia-simples:hover {
+            background: var(--verde-rios);
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 158, 77, 0.3);
+        }
+
+        /* --- RODAPÉ --- */
         footer {
             background: var(--azul-rios);
             color: #ffffff;
@@ -242,7 +278,8 @@
             body { padding-top: 140px; }
             .logo img { height: 80px; }
             .hero h1 { font-size: 2.2rem; }
-            .acesso-rapido { grid-template-columns: 1fr; } /* Empilha os botões no celular */
+            .btn-3d { font-size: 1rem; padding: 15px; }
+            .btn-3d span { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -263,15 +300,11 @@
     </section>
 
     <section class="acesso-rapido">
-        <button onclick="abrirModal('modalLocais')" class="card-btn card-locais">
+        <button onclick="abrirModal('modalLocais')" class="btn-3d btn-locais-3d">
             <span>📍</span> Locais que Atendemos
         </button>
 
-        <button onclick="abrirModal('modalHistoria')" class="card-btn card-historia">
-            <span>📖</span> Como surgiu a RiosNet?
-        </button>
-
-        <a href="suporte.html" target="_blank" class="card-btn card-suporte">
+        <a href="suporte.html" target="_blank" class="btn-3d btn-suporte-3d">
             <span>⏩</span> Precisa de Suporte Rápido?
         </a>
     </section>
@@ -280,6 +313,12 @@
         <h2>Pronto para navegar sem limites?</h2>
         <p>Fale agora mesmo com o nosso suporte técnico e comercial.</p>
         <a href="https://wa.me/5591993802718" target="_blank" class="btn-cta">ASSINE JÁ</a>
+    </section>
+
+    <section class="historia-rodape">
+        <button onclick="abrirModal('modalHistoria')" class="btn-historia-simples">
+            <span>📖</span> Como surgiu a RiosNet? Clique aqui e saiba
+        </button>
     </section>
 
     <footer>
