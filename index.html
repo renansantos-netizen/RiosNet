@@ -24,15 +24,16 @@
             background-color: var(--fundo-claro);
             color: #333;
             line-height: 1.6;
-            padding-top: 180px;
+            padding-top: 150px;
         }
 
+        /* --- CABEÇALHO --- */
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px 10%;
+            padding: 15px 10%;
             background: #ffffff;
             position: fixed;
             width: 100%;
@@ -42,14 +43,9 @@
         }
 
         .logo img {
-            height: 130px;
+            height: 110px;
             width: auto;
-            margin-bottom: 15px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
+            margin-bottom: 10px;
         }
 
         nav a {
@@ -64,21 +60,17 @@
             color: var(--laranja-rios);
         }
 
+        /* --- DESTAQUE PRINCIPAL --- */
         .hero {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 60px 20px;
             text-align: center;
             background: linear-gradient(135deg, #f8fcfd 0%, #e2edf8 100%);
-            padding: 40px 20px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             color: var(--azul-rios);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 900;
         }
 
@@ -90,75 +82,78 @@
             font-size: 1.3rem;
             color: #555;
             max-width: 700px;
-            margin-bottom: 40px;
+            margin: 0 auto;
         }
 
-        .botoes-container {
+        /* --- MENU DE ACESSO RÁPIDO (Botões Organizados) --- */
+        .acesso-rapido {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 10%;
+            background: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-btn {
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            text-align: center;
+            cursor: pointer;
+            border: none;
             display: flex;
-            gap: 15px;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .btn-secundario {
+        .card-btn span {
+            font-size: 2rem; /* Tamanho do ícone/emoji */
+        }
+
+        /* Cores Específicas dos Cartões */
+        .card-locais {
             background: var(--azul-rios);
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s;
-            display: inline-block;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
+            color: white;
         }
+        .card-locais:hover { background: #112a52; transform: translateY(-5px); }
 
-        .btn-historia {
+        .card-historia {
             background: var(--verde-rios);
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s;
-            display: inline-block;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
+            color: white;
         }
+        .card-historia:hover { background: #007a3b; transform: translateY(-5px); }
 
-        .btn-suporte {
+        .card-suporte {
             background: var(--vermelho-alerta);
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s;
-            display: inline-block;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(217, 56, 56, 0.4);
-            width: 100%;
-            max-width: 400px;
-            margin-top: 10px;
+            color: white;
+        }
+        .card-suporte:hover { background: #b82a2a; transform: translateY(-5px); }
+
+        /* --- SEÇÃO ASSINATURA E RODAPÉ --- */
+        .subscribe-section {
+            padding: 80px 10%;
+            text-align: center;
+            background: #f4f9f9;
         }
 
-        .btn-secundario:hover, .btn-historia:hover, .btn-suporte:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+        .subscribe-section h2 {
+            color: var(--azul-rios);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
         .btn-cta {
             background: var(--laranja-rios);
             color: #ffffff;
-            padding: 22px 60px;
+            padding: 20px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -167,6 +162,7 @@
             box-shadow: 0 8px 20px rgba(241, 131, 33, 0.4);
             display: inline-block;
             text-transform: uppercase;
+            margin-top: 20px;
         }
 
         .btn-cta:hover {
@@ -174,7 +170,25 @@
             transform: scale(1.05);
         }
 
-        /* Modais */
+        footer {
+            background: var(--azul-rios);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .owners {
+            background: #ffffff;
+            color: var(--verde-rios);
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* --- ESTILOS DAS JANELAS OCULTAS (MODAIS) --- */
         .modal {
             display: none;
             position: fixed;
@@ -198,25 +212,13 @@
             width: 100%;
             max-width: 500px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .modal-content h3 {
-            color: var(--azul-rios);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .modal-content p {
-            font-size: 1.1rem;
-            color: #444;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
+        .modal-content h3 { color: var(--azul-rios); margin-bottom: 20px; font-size: 1.8rem; }
+        .modal-content p { color: #444; text-align: justify; margin-bottom: 15px; }
+        
         .modal-content li {
             list-style: none;
-            font-size: 1.1rem;
             color: #333;
             margin-bottom: 10px;
             padding: 12px;
@@ -236,41 +238,11 @@
             color: #999;
         }
 
-        .subscribe-section {
-            padding: 100px 10%;
-            text-align: center;
-            background: #ffffff;
-        }
-
-        .subscribe-section h2 {
-            color: var(--azul-rios);
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: var(--azul-rios);
-            color: #ffffff;
-            text-align: center;
-            padding: 50px 10%;
-        }
-
-        .owners {
-            background: #ffffff;
-            color: var(--verde-rios);
-            font-weight: bold;
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            margin-top: 25px;
-            font-size: 1.2rem;
-        }
-
         @media (max-width: 768px) {
-            body { padding-top: 160px; }
+            body { padding-top: 140px; }
             .logo img { height: 80px; }
             .hero h1 { font-size: 2.2rem; }
-            .btn-secundario, .btn-historia, .btn-suporte { width: 100%; }
+            .acesso-rapido { grid-template-columns: 1fr; } /* Empilha os botões no celular */
         }
     </style>
 </head>
@@ -281,7 +253,6 @@
             <img src="logo.jpg" alt="RiosNet Provedor de Internet">
         </div>
         <nav>
-            <a href="#inicio">Início</a>
             <a href="#assinar">Assinar</a>
         </nav>
     </header>
@@ -289,13 +260,20 @@
     <section class="hero" id="inicio">
         <h1>Conexão de Verdade com a <span>RiosNet</span></h1>
         <p>A melhor fibra óptica com alta disponibilidade para você na região.</p>
-        
-        <div class="botoes-container">
-            <button onclick="abrirModal('modalLocais')" class="btn-secundario">Locais que Atendemos</button>
-            <button onclick="abrirModal('modalHistoria')" class="btn-historia">Como surgiu a RiosNet? Clique aqui e saiba</button>
-        </div>
-        
-        <a href="suporte.html" target="_blank" class="btn-suporte">PRECISA DE SUPORTE RÁPIDO ⏩? CLICK AQUI!</a>
+    </section>
+
+    <section class="acesso-rapido">
+        <button onclick="abrirModal('modalLocais')" class="card-btn card-locais">
+            <span>📍</span> Locais que Atendemos
+        </button>
+
+        <button onclick="abrirModal('modalHistoria')" class="card-btn card-historia">
+            <span>📖</span> Como surgiu a RiosNet?
+        </button>
+
+        <a href="suporte.html" target="_blank" class="card-btn card-suporte">
+            <span>⏩</span> Precisa de Suporte Rápido?
+        </a>
     </section>
 
     <section class="subscribe-section" id="assinar">
